@@ -18,6 +18,7 @@ export default function Products() {
   const [isLoading, setIsLoading] = useState();
 
   useEffect(() => {
+    setIsLoading(true);
     // async function loadProducts() {
     //   try {
     //     const products = await getImage();
@@ -35,7 +36,9 @@ export default function Products() {
         setProducts(products);
       } catch (error) {
         console.error(error);
+        setError(error);
       }
+      setIsLoading;
     })();
   }, []);
 
