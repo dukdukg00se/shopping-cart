@@ -2,7 +2,10 @@
   display: flex;
   justify-content: space-between;
   padding: 2rem 4rem;
-  background-color: burlywood;
+  /* background-color: burlywood; */
+  height: 16vh;
+
+  background: linear-gradient(180deg, #dac9b4, 35%, #fff);
 }
 
 .header h1 {
@@ -27,4 +30,18 @@
   gap: 10px;
   list-style-type: none;
   font-size: 2.2rem;
+}
+
+.linkWrapper {
+  font-size: 2.3rem;
+  padding: 1rem;
+}
+
+.linkWrapper:hover {
+  transform: scale(1.1);
+}
+
+.linkWrapper a {
+  text-decoration: none;
+  color: black;
 }
