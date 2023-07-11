@@ -1,0 +1,37 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  margin: 1rem auto;
+  gap: 1rem;
+  height: 75vh;
+  max-width: 65rem;
+  min-width: 40rem;
+}
+
+.cart > h3 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.cart > div {
+  height: 75%;
+  overflow: auto;
+  margin-bottom: 3rem;
+}
+
+.item {
+  display: flex;
+  gap: 5rem;
+  margin: 2rem 0;
+}
+
+.item img {
+  width: 10rem;
+}
+
+.itemInfo {
+}
