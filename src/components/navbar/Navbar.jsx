@@ -1,7 +1,20 @@
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
-export default function Navbar() {
+function getItemCount(items) {
+  let totalItems = 0;
+  items.forEach((item) => {
+    totalItems += item.quantity;
+  });
+  return totalItems;
+}
+
+export default function Navbar({ itemsInCart }) {
+  // let totalItems = 0;
+  // itemsInCart.forEach((item) => {
+  //   totalItems += item.quantity;
+  // });
+
   return (
     <header className={styles.header}>
       <div>
@@ -18,7 +31,7 @@ export default function Navbar() {
             <Link to="/products">Products</Link>
           </li>
           <li className={styles.linkWrapper}>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart ({getItemCount(itemsInCart)})</Link>
           </li>
         </ul>
       </nav>
