@@ -3,12 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50vw;
+  /* width: 50vw; */
   margin: 1rem auto;
   gap: 1rem;
-  height: 75vh;
-  max-width: 65rem;
-  min-width: 40rem;
+  max-height: 75vh;
+  /* max-width: 65rem; */
+  /* min-width: 40rem; */
 }
 
 .cart > h3 {
@@ -18,9 +18,10 @@
 }
 
 .cart > div {
-  height: 75%;
+  max-height: 75%;
   overflow: auto;
   margin-bottom: 3rem;
+  width: 50rem;
 }
 
 .item {
@@ -29,9 +30,40 @@
   margin: 2rem 0;
 }
 
-.item img {
+.itemImg {
   width: 10rem;
 }
 
 .itemInfo {
+  padding: 1rem;
+}
+
+.itemInfo h3 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.itemInfo > span {
+  display: block;
+  margin: 1.3rem 0;
+}
+
+.buttonContainer {
+  margin: 1rem 0;
+}
+
+.item button {
+  margin: 0 2rem;
+}
+
+.item button img {
+}
+
+.cart > button {
+  width: 15rem;
+  height: 4rem;
+  color: white;
+  background-color: burlywood;
+  font-size: 2rem;
+  border-radius: 5px;
 }
