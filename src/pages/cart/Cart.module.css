@@ -17,7 +17,7 @@
   margin-bottom: 3rem;
 }
 
-.cart > div {
+.cart > ul {
   max-height: 75%;
   overflow: auto;
   margin-bottom: 3rem;
@@ -57,6 +57,8 @@
 }
 
 .item button img {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .cart > button {
