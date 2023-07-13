@@ -67,7 +67,7 @@ function App() {
     console.log(itemsInCart);
   }, [itemsInCart]);
 
-  const addItem = (e) => {
+  const addItemToCart = (e) => {
     const itemId = +e.target.closest('li').id;
     const inCart = itemsInCart
       .reduce((prevItemId, currItem) => {
@@ -77,9 +77,8 @@ function App() {
       }, [])
       .includes(itemId);
 
-    let tempItem;
-
     if (!inCart) {
+      let tempItem;
       for (let i = 0; i < items.length; i++) {
         if (items[i].id === itemId) {
           tempItem = { ...items[i] };
@@ -91,16 +90,41 @@ function App() {
       let tempItemList = [...itemsInCart];
       for (let i = 0; i < tempItemList.length; i++) {
         if (tempItemList[i].id === itemId) {
-          tempItem = { ...tempItemList[i] };
-          tempItem.quantity++;
-          tempItemList[i] = tempItem;
+          tempItemList[i].quantity++;
           setItemsInCart(tempItemList);
         }
       }
     }
   };
 
-  const removeItem = (e) => {};
+  const increaseQuantity = (e) => {
+    const itemId = +e.target.closest('li').id;
+    let tempItemList = [...itemsInCart];
+
+    for (let i = 0; i < tempItemList.length; i++) {
+      if (tempItemList[i].id === itemId) {
+        tempItemList[i].quantity++;
+        setItemsInCart(tempItemList);
+      }
+    }
+  };
+
+  const decreaseQuantity = (e) => {
+    const itemId = +e.target.closest('li').id;
+    let tempItemList = [...itemsInCart];
+
+    for (let i = 0; i < tempItemList.length; i++) {
+      if (tempItemList[i].id === itemId) {
+        if (tempItemList[i].quantity <= 1) {
+          tempItemList.splice(i, 1);
+        } else {
+          tempItemList[i].quantity--;
+        }
+      }
+    }
+
+    setItemsInCart(tempItemList);
+  };
 
   return (
     <>
@@ -110,9 +134,18 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/products"
-          element={<Products onClick={addItem} items={items} />}
+          element={<Products onClick={addItemToCart} items={items} />}
         />
-        <Route path="/cart" element={<Cart itemsInCart={itemsInCart} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              itemsInCart={itemsInCart}
+              increaseQuantity={increaseQuantity}
+              decreaseQuantity={decreaseQuantity}
+            />
+          }
+        />
       </Routes>
     </>
   );
