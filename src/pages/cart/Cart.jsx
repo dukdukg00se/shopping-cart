@@ -11,39 +11,42 @@ function getTotal(arr) {
   return total.toFixed(2);
 }
 
-export default function Cart({ itemsInCart }) {
+export default function Cart({
+  increaseQuantity,
+  decreaseQuantity,
+  itemsInCart,
+}) {
   const navigate = useNavigate();
-  const goBack = () => {
-    navigate(-1);
-  };
+  const goBack = () => navigate(-1);
+
   return (
     <div className={styles.cart}>
       <h3>Your Shopping Cart</h3>
 
-      <div>
+      <ul>
         {itemsInCart.map((item) => {
           return (
-            <div key={item.id} id={item.id} className={styles.item}>
+            <li key={item.id} id={item.id} className={styles.item}>
               <div>
                 <img src={item.image} className={styles.itemImg}></img>
               </div>
               <div className={styles.itemInfo}>
                 <h3>{item.title}</h3>
-                <span>{item.price}</span>
+                <span>{item.price.toFixed(2)}</span>
                 <div>
-                  <button>
-                    <img src={removeIcon} />
+                  <button type="button" onClick={decreaseQuantity}>
+                    <img src={removeIcon} alt="Minus icon" />
                   </button>
                   <span>{item.quantity}</span>
-                  <button>
-                    <img src={addIcon} />
+                  <button type="button" onClick={increaseQuantity}>
+                    <img src={addIcon} alt="Plus icon" />
                   </button>
                 </div>
               </div>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
 
       <h3>Total: ${getTotal(itemsInCart)}</h3>
 
