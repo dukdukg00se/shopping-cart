@@ -4,9 +4,10 @@ import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
 import Products from './pages/products/Products';
 import Cart from './pages/cart/Cart';
+import Error from './pages/error/Error';
 import './App.css';
 
-// Utility fns
+// api - fetch products
 async function loadProducts() {
   const response = await fetch('https://fakestoreapi.com/products');
 
@@ -17,6 +18,8 @@ async function loadProducts() {
   return response.json();
 }
 
+// Filters input products and returns only clothing items
+// Also add quantity prop to each item set to 0
 function getClothingItems(items) {
   const catalog = items.filter(
     (item) =>
@@ -30,16 +33,14 @@ function getClothingItems(items) {
   return catalog;
 }
 
-//--------------------------
-
+// App component
 function App() {
-  const [error, setError] = useState();
-  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [items, setItems] = useState();
   const [itemsInCart, setItemsInCart] = useState([]);
 
+  // Fetch and setItems on component load
   useEffect(() => {
-    setIsLoading(true);
     // Instead of a named fn and calling it as below, use an IIFE
     // -------------------------------
     // async function loadProducts() {
@@ -56,16 +57,12 @@ function App() {
       try {
         const products = await loadProducts();
         setItems(getClothingItems(products));
+        setError(false);
       } catch (error) {
-        setError('Something went wrong');
+        setError(true);
       }
-      setIsLoading(false);
     })();
   }, []);
-
-  useEffect(() => {
-    console.log(itemsInCart);
-  }, [itemsInCart]);
 
   const addItemToCart = (e) => {
     const itemId = +e.target.closest('li').id;
@@ -97,6 +94,7 @@ function App() {
     }
   };
 
+  // Increase items in cart
   const increaseQuantity = (e) => {
     const itemId = +e.target.closest('li').id;
     let tempItemList = [...itemsInCart];
@@ -109,6 +107,7 @@ function App() {
     }
   };
 
+  // Decrease items in cart
   const decreaseQuantity = (e) => {
     const itemId = +e.target.closest('li').id;
     let tempItemList = [...itemsInCart];
@@ -134,7 +133,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/products"
-          element={<Products onClick={addItemToCart} items={items} />}
+          element={
+            error ? (
+              <Error />
+            ) : (
+              <Products onClick={addItemToCart} products={items} />
+            )
+          }
         />
         <Route
           path="/cart"
