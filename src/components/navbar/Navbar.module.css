@@ -2,9 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 2rem 4rem;
-  /* background-color: burlywood; */
   height: 16vh;
-
   background: linear-gradient(180deg, #dac9b4, 35%, #fff);
 }
 
@@ -41,7 +39,7 @@
   transform: scale(1.1);
 }
 
-.linkWrapper a {
+a {
   text-decoration: none;
   color: black;
 }
