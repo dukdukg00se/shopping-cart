@@ -20,7 +20,7 @@ export default function Cart({
   const goBack = () => navigate(-1);
 
   return (
-    <div className={styles.cart}>
+    <main className={styles.cart}>
       <h3>Your Shopping Cart</h3>
 
       <ul>
@@ -54,6 +54,6 @@ export default function Cart({
       <button type="button" onClick={goBack}>
         Close
       </button>
-    </div>
+    </main>
   );
 }
