@@ -13,11 +13,7 @@
 }
 
 .catalog li {
-  /* width: 19%; */
-  /* height: 510px; */
   padding: 15px 10px 10px 10px;
-  border: solid 2px gray;
-  border-radius: 5px;
 }
 
 .productCard {
@@ -29,19 +25,20 @@
 }
 
 .productCard img {
-  width: 75%;
-  height: 45%;
+  width: 15.7rem;
+  height: 17.6rem;
   object-fit: contain;
   margin-bottom: 1.8rem;
 }
 
 .productCard button {
-  width: 85%;
+  width: 100%;
   height: 40px;
   color: white;
   background-color: burlywood;
   font-size: 2rem;
   border-radius: 5px;
+  margin-top: 1rem;
 }
 
 .productCard button:active {
@@ -50,10 +47,10 @@
 
 .productDescription {
   border-top: solid 1px gray;
-  height: 31%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1 1 0;
 }
 
 .productTitle {
