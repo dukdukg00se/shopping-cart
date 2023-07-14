@@ -10,17 +10,12 @@ function getItemCount(items) {
 }
 
 export default function Navbar({ itemsInCart }) {
-  // let totalItems = 0;
-  // itemsInCart.forEach((item) => {
-  //   totalItems += item.quantity;
-  // });
-
   return (
     <header className={styles.header}>
-      <div>
+      <Link to="/">
         <h1>A.B.C</h1>
         <h2>A Beautiful Choice</h2>
-      </div>
+      </Link>
 
       <nav className={styles.navContainer}>
         <ul>
