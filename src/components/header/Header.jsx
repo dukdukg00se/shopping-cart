@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from './Navbar.module.css';
+import styles from './Header.module.css';
 
 function getItemCount(items) {
   let totalItems = 0;
@@ -9,7 +9,7 @@ function getItemCount(items) {
   return totalItems;
 }
 
-export default function Navbar({ itemsInCart }) {
+export default function Header({ itemsInCart }) {
   return (
     <header className={styles.header}>
       <Link to="/">
