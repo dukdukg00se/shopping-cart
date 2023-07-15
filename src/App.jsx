@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/header/Header';
+import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
 import Products from './pages/products/Products';
 import Cart from './pages/cart/Cart';
@@ -152,6 +153,8 @@ function App() {
           }
         />
       </Routes>
+
+      <Footer />
     </>
   );
 }
