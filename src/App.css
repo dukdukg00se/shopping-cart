@@ -137,6 +137,7 @@ table {
 html,
 body {
   height: 100%;
+  min-width: 300px;
 }
 
 html {
@@ -146,4 +147,10 @@ html {
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 2rem;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
