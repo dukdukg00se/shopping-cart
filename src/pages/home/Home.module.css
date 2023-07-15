@@ -1,7 +1,7 @@
 .home {
-  height: 84vh;
   background: center / cover no-repeat url('../../assets/cover-items.jpg');
   position: relative;
+  flex: 1 1 auto;
 }
 
 .overlayText {
@@ -20,4 +20,11 @@
   margin: auto;
   letter-spacing: 4px;
   text-decoration: none;
+}
+
+@media (max-width: 625px) {
+  .overlayText {
+    font-size: 2.3rem;
+    width: 100%;
+  }
 }
