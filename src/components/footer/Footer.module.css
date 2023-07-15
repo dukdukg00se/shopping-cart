@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 1 10rem;
+  background: linear-gradient(0deg, #dac9b4, 35%, #fff);
+  padding: 2rem 4rem;
+}
+
+.footer nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer span {
+  display: block;
+  margin: 0.3rem 0;
+}
+
+@media (max-width: 625px) {
+  .footer {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
