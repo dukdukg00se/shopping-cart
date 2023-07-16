@@ -3,12 +3,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 50vw; */
+  flex: 1 1 auto;
   margin: 1rem auto;
   gap: 1rem;
-  max-height: 75vh;
-  /* max-width: 65rem; */
-  /* min-width: 40rem; */
 }
 
 .cart > h3 {
@@ -48,10 +45,6 @@
   margin: 1.3rem 0;
 }
 
-.buttonContainer {
-  margin: 1rem 0;
-}
-
 .item button {
   margin: 0 2rem;
 }
@@ -59,6 +52,7 @@
 .item button img {
   width: 2.4rem;
   height: 2.4rem;
+  margin-bottom: -2px;
 }
 
 .cart > button {
@@ -68,4 +62,40 @@
   background-color: burlywood;
   font-size: 2rem;
   border-radius: 5px;
+}
+
+@media (max-width: 625px) {
+  .cart > ul {
+    width: 80%;
+  }
+
+  .item {
+    gap: 2.5rem;
+    margin: 1rem 0;
+  }
+
+  .itemImg {
+    width: 8rem;
+  }
+
+  .itemInfo h3 {
+    font-size: 1.8rem;
+  }
+
+  .itemInfo > span {
+    font-size: 1.8rem;
+  }
+
+  .buttonContainer {
+    font-size: 1.6rem;
+  }
+
+  .item button {
+    margin: 0 1rem;
+  }
+
+  .item button img {
+    width: 2rem;
+    height: 2rem;
+  }
 }

@@ -33,7 +33,7 @@ export default function Cart({
               <div className={styles.itemInfo}>
                 <h3>{item.title}</h3>
                 <span>{item.price.toFixed(2)}</span>
-                <div>
+                <div className={styles.buttonContainer}>
                   <button type="button" onClick={decreaseQuantity}>
                     <img src={removeIcon} alt="Minus icon" />
                   </button>
