@@ -1,13 +1,6 @@
 import { Link } from 'react-router-dom';
+import { getItemCount } from '../../utils/utilityFns';
 import styles from './Header.module.css';
-
-function getItemCount(items) {
-  let totalItems = 0;
-  items.forEach((item) => {
-    totalItems += item.quantity;
-  });
-  return totalItems;
-}
 
 export default function Header({ itemsInCart }) {
   return (

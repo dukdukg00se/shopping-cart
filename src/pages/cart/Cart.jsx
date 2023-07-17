@@ -2,14 +2,7 @@ import styles from './Cart.module.css';
 import addIcon from '../../assets/add-icon.svg';
 import removeIcon from '../../assets/remove-icon.svg';
 import { useNavigate } from 'react-router-dom';
-
-function getTotal(arr) {
-  let total = 0;
-  arr.forEach((item) => {
-    total += item.price * item.quantity;
-  });
-  return total.toFixed(2);
-}
+import { getTotal } from '../../utils/utilityFns';
 
 export default function Cart({
   increaseQuantity,

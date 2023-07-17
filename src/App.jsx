@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { getClothingItems } from './utils/utilityFns';
+import loadProducts from './api/productsApi';
 import Navbar from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
@@ -7,32 +9,6 @@ import Products from './pages/products/Products';
 import Cart from './pages/cart/Cart';
 import Error from './pages/error/Error';
 import './App.css';
-
-// api - fetch products
-async function loadProducts() {
-  const response = await fetch('https://fakestoreapi.com/products');
-
-  if (!response.ok) {
-    throw new Error('Check product fetch');
-  }
-
-  return response.json();
-}
-
-// Filters input products and returns only clothing items
-// Also add quantity prop to each item set to 0
-function getClothingItems(items) {
-  const catalog = items.filter(
-    (item) =>
-      item.category === "women's clothing" || item.category === "men's clothing"
-  );
-
-  catalog.forEach((item) => {
-    item.quantity = 0;
-  });
-
-  return catalog;
-}
 
 // App component
 function App() {
