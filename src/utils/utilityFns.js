@@ -3,7 +3,8 @@
 function getClothingItems(items) {
   const catalog = items.filter(
     (item) =>
-      item.category === "women's clothing" || item.category === "men's clothing"
+      item.category === "women's clothing" ||
+      item.category === "men's clothing",
   );
 
   catalog.forEach((item) => {
