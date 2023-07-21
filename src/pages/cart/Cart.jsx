@@ -1,6 +1,7 @@
 import styles from './Cart.module.css';
 import addIcon from '../../assets/add-icon.svg';
 import removeIcon from '../../assets/remove-icon.svg';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { getTotal } from '../../utils/utilityFns';
 
@@ -50,3 +51,9 @@ export default function Cart({
     </main>
   );
 }
+
+Cart.propTypes = {
+  increaseQuantity: PropTypes.func,
+  decreaseQuantity: PropTypes.func,
+  itemsInCart: PropTypes.array,
+};

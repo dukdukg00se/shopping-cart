@@ -1,4 +1,5 @@
 import styles from './Products.module.css';
+import PropTypes from 'prop-types';
 
 export default function Products({ onClick, products }) {
   return (
@@ -26,3 +27,8 @@ export default function Products({ onClick, products }) {
     </main>
   );
 }
+
+Products.propTypes = {
+  onClick: PropTypes.func,
+  products: PropTypes.array,
+};

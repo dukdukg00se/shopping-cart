@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { getItemCount } from '../../utils/utilityFns';
+import PropTypes from 'prop-types';
 import styles from './Header.module.css';
 
 export default function Header({ itemsInCart }) {
@@ -26,3 +27,7 @@ export default function Header({ itemsInCart }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  itemsInCart: PropTypes.array,
+};
