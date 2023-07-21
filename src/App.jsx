@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { getClothingItems } from './utils/utilityFns';
 import loadProducts from './api/productsApi';
 import Navbar from './components/header/Header';
@@ -11,6 +11,7 @@ import Error from './pages/error/Error';
 import './App.css';
 
 // App component
+/** */
 function App() {
   const [error, setError] = useState(false);
   const [items, setItems] = useState();
@@ -104,35 +105,38 @@ function App() {
 
   return (
     <>
-      <Navbar itemsInCart={itemsInCart} />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/products"
-          element={
-            error ? (
-              <Error />
-            ) : (
-              <Products onClick={addItemToCart} products={items} />
-            )
-          }
-        />
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              itemsInCart={itemsInCart}
-              increaseQuantity={increaseQuantity}
-              decreaseQuantity={decreaseQuantity}
-            />
-          }
-        />
-      </Routes>
-
-      <Footer />
+      <BrowserRouter>
+        <Navbar itemsInCart={itemsInCart} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/products"
+            element={
+              error ? (
+                <Error />
+              ) : (
+                <Products onClick={addItemToCart} products={items} />
+              )
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                itemsInCart={itemsInCart}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+              />
+            }
+          />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
+
+/** */
+// const App = () => <h1>Our First Test</h1>;
 
 export default App;
