@@ -6,7 +6,7 @@ A generic eCommerce store with a home/landing page, a products page, and a cart 
 
 [Live Demo]()
 
-<img src="./src/assets/app-screenshot.png" width="55%">
+<img src="./src/assets/app-home-screenshot.png" width="55%">
 
 ## Learning Objectives
 
