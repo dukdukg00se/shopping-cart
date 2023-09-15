@@ -4,10 +4,10 @@ import { getClothingItems } from './utils/utilityFns';
 import loadProducts from './api/productsApi';
 import Navbar from './components/header/Header';
 import Footer from './components/footer/Footer';
-import Home from './pages/home/Home';
-import Products from './pages/products/Products';
-import Cart from './pages/cart/Cart';
-import Error from './pages/error/Error';
+import Home from './components/home/Home';
+import Products from './components/products/Products';
+import Cart from './components/cart/Cart';
+import Error from './components/error/Error';
 import './App.css';
 
 // App component
