@@ -4,13 +4,13 @@
 
 A generic eCommerce store with a home/landing page, a products page, and a cart page. Products were obtained using the FakeStore api. Client side routing accomplished with React Router and testing was done through the Vitest test framework.
 
-[Live Demo]()
+[Live Demo](https://shimmering-unicorn-89ed08.netlify.app)
 
 <img src="./src/assets/app-home-screenshot.png" width="55%">
 
 ## Learning Objectives
 
-Getting familiar with the React ecosystem
+Familiarization with the React ecosystem
 
 - React testing
 - React Router
