@@ -25,7 +25,7 @@ export default function Cart({
                 <img src={item.image} className={styles.itemImg}></img>
               </div>
               <div className={styles.itemInfo}>
-                <h3>{item.title}</h3>
+                <h5>{item.title}</h5>
                 <span>{item.price.toFixed(2)}</span>
                 <div className={styles.buttonContainer}>
                   <button type="button" onClick={decreaseQuantity}>
@@ -42,7 +42,7 @@ export default function Cart({
         })}
       </ul>
 
-      <h3>Total: ${getTotal(itemsInCart)}</h3>
+      <h4>Total: ${getTotal(itemsInCart)}</h4>
 
       <button type="button">Checkout</button>
       <button type="button" onClick={goBack}>
