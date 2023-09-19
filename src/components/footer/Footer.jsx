@@ -34,13 +34,17 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/" target="_blank" rel="noreferrer">
-              <img src={twitterLogo} />
+            <a href="https://www.twitter.com/" target="_blank" rel="noreferrer">
+              <img src={twitterLogo} alt="Twitter logo" />
             </a>
           </li>
           <li>
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
-              <img src={linkedinLogo} />
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={linkedinLogo} alt="Linkedin logo" />
             </a>
           </li>
         </ul>
