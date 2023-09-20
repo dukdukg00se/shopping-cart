@@ -23,6 +23,7 @@ This project was done as part of [The Odin Project](https://www.theodinproject.c
 
 ## Future Improvements
 
+- Finish writing tests
 - Refactor utilizing the new data apis in react-router
 - Add a favicon to page
 
