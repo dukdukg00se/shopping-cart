@@ -10,8 +10,6 @@ import Cart from './components/cart/Cart';
 import Error from './components/error/Error';
 import './App.css';
 
-// App component
-/** */
 function App() {
   const [error, setError] = useState(false);
   const [items, setItems] = useState();
@@ -135,8 +133,5 @@ function App() {
     </>
   );
 }
-
-/** */
-// const App = () => <h1>Our First Test</h1>;
 
 export default App;
